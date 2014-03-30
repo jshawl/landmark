@@ -115,7 +115,7 @@ footer {
 /*******************************************/
 
 .foo {
-height: 300px;
+/*height: 300px;*/
 width: 240px;
 background-color: black;
 float: left;
@@ -125,7 +125,7 @@ margin: 20px;
 
 .foo img {
     width:240px;
-    height:300px;
+/*    height:300px;*/
 }
 
 
@@ -141,5 +141,39 @@ margin: 20px;
     margin: auto;
 }
 
+/******************************************
+/* PHP MASONRY
+/*******************************************/
+
+#photos.loading {
+  min-height: 500px;
+  background: transparent url(images/loader.gif) no-repeat center center;
+}
+#photos .photo {
+  padding: 10px;
+  box-shadow: #222 3px 3px 3px;
+  width: 240px;
+  font-size: 87%;
+  background: #F5F5F5;
+  display: block;
+  text-decoration: none;
+  float: left;
+  margin-bottom: 20px;
+  display: none;
+}
+#photos .photo:hover {
+  box-shadow: #000 3px 3px 3px;
+  background: #FFFFFF;
+}
+#photos .photo img {
+  max-width: 100%;
+}
+#photos .photo .title {
+  padding: 8px 8px 0 0;
+  font-style: italic;
+  font-weight: bold;
+  display: block;
+  color: #333333;
+}
 
 

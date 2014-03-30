@@ -64,3 +64,37 @@ function geoFindMe() {
 
 //Masonry
 
+  $(document).ready(function() {
+
+    $('#photos .photo').hide();    // Use jQuery to hide all photos temporarily
+
+    var $container = $('#photos'); // Create a reference to the image container
+
+    // Use the imagesLoaded callback function to activate the Masonry plugin
+    $container.imagesLoaded(function(){
+      $container.masonry({
+        itemSelector : '.photo', // The selector of the thumbnail divs
+        isAnimated : true,       // Animate (with javascript) the layout when changing window size
+                                 // Set to false if you'd rather animate with CSS3 transitions
+                                 // Or toggle with Modernizr like this: isAnimated : !Modernizr.csstransitions
+        columnWidth: 260,        // Width of the thumbnail including any padding and borders
+        gutterWidth: 20          // The gap between thumbnails
+      });
+      $container.find('.photo').fadeIn('fast'); // Fade back in the thumbnails when the layout is complete
+      $container.removeClass('loading');        // Remove the loading class from the container
+    });
+
+    // Optionally use your favourite fancyBox configuration
+    $(".fancybox").fancybox({
+      openEffect  : 'elastic',
+      closeEffect : 'elastic',
+      padding : 10,
+      helpers : {
+        title : {
+          type : 'outside'
+        }
+      }
+    });
+
+  });
+
