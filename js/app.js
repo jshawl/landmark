@@ -58,9 +58,15 @@ function geoFindMe() {
           // The URL
           console.log(photoUrl);
         }
+	//Masonry
+	var container = $('#flickr-photos');
+	container.imagesLoaded( function(){
+	  container.masonry({
+	      itemSelector: '.foo'
+	  });
+	});
 
         console.log('Done.');
       });
 
-//Masonry
 
